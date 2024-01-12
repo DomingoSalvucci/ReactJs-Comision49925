@@ -1,8 +1,18 @@
-# React + Vite
+## **_React + Vite_**
+#
+### _Coder House: Curso React JS_
+### Comision 49925
+### Alumno: Domingo Salvucci
+##
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Proyecto Final:** _Prototipo de Carrito para Aplicacion Ecommerce_
+1. **Nombre de la Aplicacion:** _MyEcommerce_
 
-Currently, two official plugins are available:
+Se aplica todo lo aprendido en el curso dictado por el Profesor: Omar J. Manias.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+![Prototipo](https://i.postimg.cc/cCcNc6Bt/My-Ecommerce2.jpg)
+
+
+
+
