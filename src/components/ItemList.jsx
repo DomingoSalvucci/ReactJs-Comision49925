@@ -5,13 +5,12 @@ import { Flex, SimpleGrid } from '@chakra-ui/react'
 //Componenete de presentacion
 
 const ItemList = ({ productos }) => {
-  // console.log(productos)
 
   return (
 
     <div>
-      {/* <Flex w='1000px' bg='green.500'> */}
-      <SimpleGrid columns={3} spacingX='40px' spacingY='20px'>
+
+      <SimpleGrid columns={4} spacingX='40px' spacingY='20px'>
         {
           productos.map((p) => {
             return (
@@ -21,14 +20,15 @@ const ItemList = ({ productos }) => {
                 descripcion={p.descripcion}
                 categoria={p.categoria}
                 precio={p.precio}
-                productoId={p.id}>
+                productoId={p.id}
+                img={p.img}>
 
               </Item>
             )
           })
 
         }
-        {/* </Flex> */}
+
       </SimpleGrid>
     </div>
 

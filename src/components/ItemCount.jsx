@@ -1,39 +1,70 @@
-import { useState } from 'react'
-import { Button, Center } from '@chakra-ui/react'
+import { useContext, useEffect, useState } from 'react'
+import { cartContext } from '../context/CarContextComponent'
+import { Link } from 'react-router-dom'
+import { SimpleGrid, Box, Button, Center } from '@chakra-ui/react'
 
-const ItemCount = () => {
+const ItemCount = ({ item }) => {
 
-  const [contador, setContador] = useState(0)
+  const [contador, setContador] = useState(1)
+  const { cart, addToCart } = useContext(cartContext)
+  const [removeButton, setRemoveBotton] = useState(false)
 
-
-  const sumar = () => {
-    if (contador < 10) {
+  function sumar() {
+    if (contador < item.stock) {
       setContador(contador + 1)
     }
   }
 
-  const restar = () => {
+  function restar() {
     if (contador > 0) {
       setContador(contador - 1)
     }
   }
 
-  const mostrarMensaje = () => {
-    alert(`Agregado al carrito ${contador} unidades`)
+  function onAdd() {
+
+    addToCart(item, contador)
+    setRemoveBotton(true)
   }
+
+  useEffect(() => {
+    console.log(cart)
+  }, [cart])
+
 
   return (
     <div>
 
-      <Button colorScheme='teal' size='xs' onClick={sumar}>
-        +
-      </Button>
-      <Button onClick={mostrarMensaje}>
-        Agregar al Carrito {contador}
-      </Button>
-      <Button colorScheme='teal' size='xs' onClick={restar}>
-        -
-      </Button>
+      {removeButton ? (
+        <>
+          <Box>
+            <Center>
+              <b>Producto Agregado...</b>
+            </Center>
+          </Box>
+
+          <SimpleGrid columns={2} spacing={30}>
+
+            <Box height='30px'>
+              <Button>
+                <Link to="/"> Seguir Comprando </Link>
+              </Button>
+            </Box>
+
+            <Box height='30px'>
+              <Button>
+                <Link to="/checkout"> Terminar Compra </Link>
+              </Button>
+            </Box>
+
+          </SimpleGrid>
+
+        </>
+      ) : (<>
+        <Button colorScheme='teal' size='xs' onClick={sumar}> + </Button>
+        <Button onClick={onAdd}>Agregar al Carrito {contador} </Button>
+        <Button colorScheme='teal' size='xs' onClick={restar}> - </Button>
+      </>)}
 
     </div >
 

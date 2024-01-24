@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.texto{
+  outline: solid;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

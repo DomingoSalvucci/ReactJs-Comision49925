@@ -1,6 +1,6 @@
 import React from 'react'
 import CartWidget from './CartWidget'
-import { Center, Button, Flex, Spacer, Box, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { Center, Button, Flex, Spacer, Box, Menu, MenuButton, MenuList, MenuItem, Divider } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { ChevronDownIcon } from '@chakra-ui/icons' /*Import Icons*/
 
@@ -12,7 +12,7 @@ const NavBar = () => {
 
         <Link to={"/"}>
           <Box p='4' bg='blue.200'>
-            MyEcommerce
+            MyEcommerce  🏠
           </Box>
         </Link>
 
@@ -23,14 +23,14 @@ const NavBar = () => {
             Categorias
           </MenuButton>
           <MenuList>
-            <Link to={'category/A'}>
-              <MenuItem>Categoria A</MenuItem>
+            <Link to={'category/Mujer'}>
+              <MenuItem>Categoria Mujer</MenuItem>
             </Link>
-            <Link to={'category/B'}>
-              <MenuItem>Categorai B</MenuItem>
+            <Link to={'category/Hombre'}>
+              <MenuItem>Categorai Hombre</MenuItem>
             </Link>
-            <Link to={'category/C'}>
-              <MenuItem>Categorai C</MenuItem>
+            <Link to={'category/Niño'}>
+              <MenuItem>Categorai Niño</MenuItem>
             </Link>
 
           </MenuList>
@@ -44,7 +44,8 @@ const NavBar = () => {
           </Box>
         </Link>
       </Flex>
-
+      <Divider />
+      <br />
     </div>
   )
 }
